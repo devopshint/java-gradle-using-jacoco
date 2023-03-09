@@ -4,7 +4,7 @@ plugins {
    
 }
 
-group 'com.devopshint'
+group 'com.madrapps'
 version '1.0-SNAPSHOT'
 
 repositories {

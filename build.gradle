@@ -1,10 +1,10 @@
 plugins {
     id 'java'
     id 'jacoco'
-    id 'org.jetbrains.kotlin.jvm' version '1.4.30'
+   
 }
 
-group 'com.madrapps'
+group 'com.devopshint'
 version '1.0-SNAPSHOT'
 
 repositories {
@@ -12,7 +12,6 @@ repositories {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib"
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 }
@@ -50,12 +49,10 @@ tasks.create(name: "testCoverage", type: JacocoReport, dependsOn: "test") {
     ]
 
     def javaClasses = fileTree(dir: "${buildDir}/classes/java/main", excludes: excludes)
-    def kotlinClasses = fileTree(dir: "${buildDir}/classes/kotlin/main", excludes: excludes)
-    classDirectories.from = files([javaClasses, kotlinClasses])
+   )
 
     sourceDirectories.from = files([
             "$project.projectDir/src/main/java",
-            "$project.projectDir/src/main/kotlin",
             "$buildDir/generated/source/kapt/test"
     ])
 
